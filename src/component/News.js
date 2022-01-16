@@ -73,7 +73,7 @@ export class News extends Component {
             <div className='container my-3'>
                 <h2 style={{ color: "red" }}>Quick News - Top-Headlines - Country - {this.props.country} - {this.props.category} </h2>
                 {this.state.loading && <Spinner/>}
-                <div className="row my-">
+                <div className="row my-3">
                     {!this.state.loading && this.state.articles.map((element) => {
                         return <div className='col-md-4 my-1' key={element.url} >
                             <Newsitem title={element.title !== null ? element.title.length > 110 ? element.title.slice(0, 110) + "..." : element.title : " "} description={element.description !== null ? element.description.length > 180 ? element.description.slice(0, 180) + "..." : element.description : " "} imageurl={element.urlToImage} newsurl={element.url} />
